@@ -2,7 +2,7 @@ import React from 'react'
 import { About } from '../styles'
 import styled from 'styled-components'
 import Toggle from './Toggle'
-import { motion } from 'framer-motion'
+import { motion, AnimateSharedLayout } from 'framer-motion'
 
 const FaqSection = () => {
   return (
@@ -10,9 +10,27 @@ const FaqSection = () => {
       <h2>
         Any Questions <span>FAQ</span>
       </h2>
-      <Toggle>
-        <motion.div className="question">
-          <h4>How Do I Start</h4>
+
+      <AnimateSharedLayout>
+        <Toggle title="How Do I Start">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi,
+              doloremque.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Daily Schedule">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi,
+              doloremque.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Different Payment Methodes">
           <div className="answer">
             <p>Lorem ipsum dolor sit amet.</p>
             <p>
@@ -21,11 +39,8 @@ const FaqSection = () => {
             </p>
           </div>
           <div className="faq-line"></div>
-        </motion.div>
-      </Toggle>
-      <Toggle>
-        <motion.div className="question">
-          <h4>Daily Schedule</h4>
+        </Toggle>
+        <Toggle title="What Products do you anwser?">
           <div className="answer">
             <p>Lorem ipsum dolor sit amet.</p>
             <p>
@@ -34,34 +49,8 @@ const FaqSection = () => {
             </p>
           </div>
           <div className="faq-line"></div>
-        </motion.div>
-      </Toggle>
-      <Toggle>
-        <motion.div className="question">
-          <h4>Different Payment Methodes</h4>
-          <div className="answer">
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi,
-              doloremque.
-            </p>
-          </div>
-          <div className="faq-line"></div>
-        </motion.div>
-      </Toggle>
-      <Toggle>
-        <motion.div className="question">
-          <h4>What Products do you anwser?</h4>
-          <div className="answer">
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi,
-              doloremque.
-            </p>
-          </div>
-          <div className="faq-line"></div>
-        </motion.div>
-      </Toggle>
+        </Toggle>
+      </AnimateSharedLayout>
     </Faq>
   )
 }
@@ -72,7 +61,7 @@ const Faq = styled(About)`
     display: block;
   }
   h2 {
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     font-weight: lighter;
   }
   .faq-line {
@@ -80,10 +69,6 @@ const Faq = styled(About)`
     height: 0.2rem;
     margin: 2rem 0rem;
     width: 100%;
-  }
-  .question {
-    padding: 3rem 0rem;
-    cursor: pointer;
   }
   .answer {
     padding: 2rem 0rem;
