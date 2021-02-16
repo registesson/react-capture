@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 //Images
-import athlete from '../img/athlete-small.png'
+import athelete from '../img/athlete-small.png'
 import theracer from '../img/theracer-small.png'
 import goodtimes from '../img/goodtimes-small.png'
 //Animation
@@ -17,6 +17,7 @@ import {
   movieContainer,
   slider,
 } from '../animation'
+import ScrollTop from '../components/ScrollTop'
 
 const OurWork = () => {
   const [element, controls] = useScroll()
@@ -28,6 +29,7 @@ const OurWork = () => {
       exit="exit"
       initial="hidden"
       animate="show">
+      <ScrollTop />
       <motion.div variants={sliderContainer}>
         <Frame1 variants={slider}></Frame1>
         <Frame2 variants={slider}></Frame2>
@@ -39,7 +41,7 @@ const OurWork = () => {
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-athlete">
           <Hide>
-            <motion.img variants={photoAnim} src={athlete} alt="athlete" />
+            <motion.img variants={photoAnim} src={athelete} alt="athlete" />
           </Hide>
         </Link>
       </Movie>
@@ -93,7 +95,6 @@ const Movie = styled(motion.div)`
     object-fit: cover;
   }
 `
-
 const Hide = styled.div`
   overflow: hidden;
 `
