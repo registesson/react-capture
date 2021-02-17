@@ -17,6 +17,12 @@ export const Description = styled(motion.div)`
   h2 {
     font-weight: lighter;
   }
+  @media (max-width: 1500px) {
+    padding: 0;
+    button {
+      margin: 2rem 0rem 5rem 0rem;
+    }
+  }
 `
 export const Image = styled(motion.div)`
   flex: 1;
@@ -26,6 +32,11 @@ export const Image = styled(motion.div)`
     width: 100%auto;
     height: 80vh;
     object-fit: cover;
+  }
+  @media (max-width: 1500px) {
+    img {
+      width: 100%;
+    }
   }
 `
 
